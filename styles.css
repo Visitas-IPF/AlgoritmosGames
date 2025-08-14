@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
+/* Fondo estilo Mario – cielo claro y pixelado */
 body {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
-  background-color: #fff;
   color: #000;
   padding: 20px;
+  /* Cielo claro */
+  background:
+    linear-gradient(#dff7ff, #bfe9ff),
+    /* rejilla sutil para efecto pixel */
+    conic-gradient(from 90deg at 1px 1px, #0000 90deg, rgba(255,255,255,.18) 0) 0 0 / 8px 8px;
+  image-rendering: pixelated;
+  overflow-x: hidden;
 }
 
+/* Título */
 h1 {
   color: #1DB954;
   font-family: 'Press Start 2P', cursive;
@@ -16,40 +24,49 @@ h1 {
   margin-bottom: 10px;
 }
 
-/* Contenedor de juegos */
+/* Envoltorio para centrar contenido y limitar ancho */
+.page-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* Contenedor de juegos: EXACTO 3 x 2 */
 .games-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);   /* 3 columnas fijas */
+  grid-template-rows: repeat(2, auto);     /* 2 filas */
   gap: 30px;
   margin-top: 40px;
 }
 
-/* Tarjeta estilo pixel */
+/* Tarjeta */
 .games-container a {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 15px;
-  background-color: var(--card-bg, #222); /* Se puede cambiar por imagen */
-  box-shadow: 0 0 0 4px #000, 0 0 0 8px var(--card-bg, #222); /* Marco pixelado */
+  background-color: var(--card-bg, #222);
+  box-shadow: 0 0 0 4px #000, 0 0 0 8px var(--card-bg, #222);
   image-rendering: pixelated;
   text-decoration: none;
   transition: transform 0.2s ease;
+  border-radius: 8px;
+  min-height: 100%;
 }
 
 .games-container a:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
-/* Imagen del juego */
+/* Mantener proporción de imagen (4:3) y que todas queden iguales */
 .games-container img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   image-rendering: pixelated;
   display: block;
 }
 
-/* Texto */
 .games-container span {
   font-family: 'Press Start 2P', cursive;
   font-size: 0.8rem;
@@ -58,7 +75,6 @@ h1 {
   text-align: center;
 }
 
-/* Botón jugar */
 .games-container .play-btn {
   padding: 8px 12px;
   font-family: 'Press Start 2P', cursive;
@@ -75,10 +91,85 @@ h1 {
   color: black;
 }
 
-/* Pajaritos pixelados */
+/* Nubecitas */
+.cloud {
+  position: fixed;
+  top: var(--cloud-top);
+  left: -100px;
+  width: 64px;
+  height: 32px;
+  background-image: url('img/nubes-Photoroom.png');
+  background-size: cover;
+  animation: cloudMove var(--speed) linear infinite;
+  image-rendering: pixelated;
+  z-index: 0;
+}
+
+@keyframes cloudMove {
+  from { transform: translateX(-100px); }
+  to { transform: translateX(110vw); }
+}
+
+/* Pasto — MÁS ALTO */
+.grass {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 96px; /* <-- antes 48px */
+  background-image: url('img/pasto-Photoroom.png');
+  background-repeat: repeat-x;
+  background-size: contain; /* mantiene el “tile” pixelado */
+  image-rendering: pixelated;
+  z-index: 5;
+}
+
+/* Bloques y hongos animados — los subimos para que no los tape el pasto más alto */
+.ground-objects {
+  position: fixed;
+  bottom: 96px; /* <-- igual a la altura del pasto */
+  left: -150px;
+  display: flex;
+  gap: 20px;
+  animation: groundMove 15s linear infinite;
+  z-index: 6; /* por encima del pasto */
+}
+
+@keyframes groundMove {
+  from { transform: translateX(-150px); }
+  to { transform: translateX(110vw); }
+}
+
+.block {
+  width: 32px;
+  height: 32px;
+  background-image: url('img/block-Photoroom.png');
+  background-size: cover;
+  image-rendering: pixelated;
+}
+
+.mushroom {
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  image-rendering: pixelated;
+}
+
+.mushroom.red {
+  background-image: url('img/hongorojo-Photoroom.png');
+}
+
+/* Pajaritos */
 @keyframes birdFly {
   from { transform: translateX(-50px); }
   to { transform: translateX(110vw); }
+}
+
+@keyframes flap {
+  0% { background-position: 0 0; }
+  33% { background-position: -32px 0; }
+  66% { background-position: -64px 0; }
+  100% { background-position: 0 0; }
 }
 
 .bird {
@@ -87,9 +178,17 @@ h1 {
   left: -50px;
   width: 32px;
   height: 32px;
-  background-image: url('img/bird-pixel.png'); /* sprite pixelado */
-  background-size: cover;
-  animation: birdFly var(--speed) linear infinite;
+  background-image: url('img/pajarito.png');
+  background-size: 96px 32px;
+  animation: birdFly var(--speed) linear infinite, flap 0.6s steps(3) infinite;
   image-rendering: pixelated;
-  z-index: 0;
+  z-index: 1;
+}
+
+/* RESPONSIVE – cuando no alcance el ancho, que se apilen bien */
+@media (max-width: 1024px) {
+  .games-container { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+}
+@media (max-width: 640px) {
+  .games-container { grid-template-columns: 1fr; }
 }
