@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+/* === FONDO ESTILO RETRO ESPACIAL === */
+body {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  padding: 30px;
+  background: radial-gradient(circle at center, #ffffff 0%, #ffffff 100%);
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 0;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+/* === TÍTULO ESTILO PIXEL === */
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  color: #1DB954;
+  text-shadow: 3px 3px #000;
+  margin-bottom: 20px;
+}
+
+/* SUBTÍTULOS */
+h2, h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: #1DB954;
+}
+
+/* PÁRRAFOS */
+p {
+  margin-bottom: 20px;
+}
+
+/* === CONTENEDORES === */
+#main-content,
+#final-page {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.6);
+  border: 4px solid #f1f4f2;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #1DB954;
+}
+
+/* === MÁS ESPACIADO ENTRE OPCIONES === */
+.buttons-container,
+#step-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* más separación */
+  margin-bottom: 30px;
+}
+
+/* === BOTONES ESTILO ARCADE === */
+button.step, 
+.choice-button, 
+#controls button, 
+#next-level,
+#final-page button {
+  padding: 15px 25px;
+  background-color: #1DB954;
+  border: 4px solid #fff;
+  color: #fff; /* TEXTO BLANCO en opciones */
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 4px 4px #000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button.step:hover,
+.choice-button:hover,
+#controls button:hover,
+#next-level:hover,
+#final-page button:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px #000;
+  background-color: #18a745;
+}
+
+/* === LISTA DE PASOS SELECCIONADOS EN NEGRO === */
+#selected-steps {
+  list-style-type: decimal;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  padding-left: 20px;
+  font-size: 1rem;
+  color: #000; /* TEXTO NEGRO en la secuencia */
+}
+
+#selected-steps li {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  box-shadow: 2px 2px #1DB954;
+}
+
+/* === MENSAJES DE ERROR Y RESULTADO ESTILO ARCADE === */
+/* === MENSAJES DE ERROR Y RESULTADO ESTILO ARCADE === */
+#result-message {
+  display: inline-block;
+  font-weight: bold;
+  margin-top: 20px;
+  min-height: 1.5em;
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: none; /* sin borde */
+  background: none; /* sin fondo */
+  font-family: 'Press Start 2P', cursive;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+/* Texto rojo para error */
+#result-message.error {
+  color: red;
+  text-shadow: 2px 2px #000;
+}
+
+/* Texto verde Spotify para correcto con reflejo animado */
+#result-message.correct {
+  color: #1DB954;
+  text-shadow: 2px 2px #000;
+}
+
+#result-message.correct::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  animation: shine 1.5s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+#result-message:empty {
+  padding: 0;
+}
+
+
+
+/* === BOTÓN VOLVER === */
+a.btn-back {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 0.8rem;
+  padding: 8px 16px;
+  background-color: #1DB954;
+  color: #000;
+  text-decoration: none;
+  border: 3px solid #fff;
+  font-family: 'Press Start 2P', cursive;
+  z-index: 1000;
+  box-shadow: 3px 3px #000;
+}
+
+a.btn-back:hover {
+  background-color: #18a745;
+  transform: scale(1.05);
+}
+
+/* === CONFETTI === */
+.confetti {
+  position: fixed;
+  top: 0;
+  font-size: 1.5rem;
+  animation: fall linear forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* === PANTALLA DE VICTORIA === */
+.victory-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom, #4b3b88, #d08db5);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  animation: fadeInVictory 1s ease forwards;
+}
+
+@keyframes fadeInVictory {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.victory-border {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Verde flúor */
+  box-shadow: 0 0 30px #1DB954;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === TEXTO YOU WIN!!! === */
+.victory-text {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  color: white;
+  text-shadow: 3px 3px #000;
+  animation: bounceText 1.5s infinite;
+}
+
+@keyframes bounceText {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* === TROFEO PIXEL === */
+.trophy {
+  width: 120px;
+  height: 120px;
+  background-image: url('copaGanador.png');
+  background-size: cover;
+  margin-top: 20px;
+  animation: shineTrophy 2s infinite;
+}
+
+@keyframes shineTrophy {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.5); }
+}
+
+/* === BOTÓN REPLAY === */
+.replay-btn {
+  margin-top: 30px;
+  padding: 12px 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.9rem;
+  background-color: #1DB954;
+  border: 4px solid #fff;
+  color: white;
+  cursor: pointer;
+  box-shadow: 4px 4px #000;
+}
+.replay-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px #000;
+  background-color: #18a745;
+}
+
+/* === NUBES ANIMADAS === */
+.cloud {
+  position: absolute;
+  width: 120px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 40px 0 white, 20px -20px white, 60px -10px white;
+  opacity: 0.8;
+}
+
+.cloud1 {
+  top: 20%;
+  left: -150px;
+  animation: moveClouds 25s linear infinite;
+}
+.cloud2 {
+  top: 50%;
+  left: -200px;
+  animation: moveClouds 30s linear infinite;
+}
+.cloud3 {
+  top: 70%;
+  left: -100px;
+  animation: moveClouds 35s linear infinite;
+}
+
+@keyframes moveClouds {
+  from { transform: translateX(0); }
+  to { transform: translateX(120vw); }
+}
+
+#final-page {
+  position: fixed;
+  inset: 0;
+  background: transparent; /* el fondo lo maneja .victory-screen */
+  z-index: 10000;
+}
+
+

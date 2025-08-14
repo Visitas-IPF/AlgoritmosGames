@@ -46,7 +46,7 @@ p {
   max-width: 900px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.6);
-  border: 4px solid #1DB954;
+  border: 4px solid #f1f4f2;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 0 20px #1DB954;
@@ -209,6 +209,8 @@ a.btn-back:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100vw;
+  height: 100vh;
   z-index: 10000;
   animation: fadeInVictory 1s ease forwards;
 }
@@ -221,8 +223,7 @@ a.btn-back:hover {
 .victory-border {
   position: relative;
   width: 100%;
-  height: 100%;
-  border: 10px solid #1DB954; /* Verde flúor */
+  height: 100%; /* Verde flúor */
   box-shadow: 0 0 30px #1DB954;
   display: flex;
   flex-direction: column;
@@ -248,7 +249,7 @@ a.btn-back:hover {
 .trophy {
   width: 120px;
   height: 120px;
-  background-image: url('https://i.ibb.co/dc5vNhn/trophy-pixel.png');
+  background-image: url('copaGanador.png');
   background-size: cover;
   margin-top: 20px;
   animation: shineTrophy 2s infinite;
@@ -308,4 +309,12 @@ a.btn-back:hover {
   from { transform: translateX(0); }
   to { transform: translateX(120vw); }
 }
+
+#final-page {
+  position: fixed;
+  inset: 0;
+  background: transparent; /* el fondo lo maneja .victory-screen */
+  z-index: 10000;
+}
+
 

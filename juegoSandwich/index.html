@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego de Algoritmos - Colegio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo-ipf.png" type="image/png">
+</head>
+<body>
+  <a href="../index.html" class="btn-back">← Volver</a>
+
+  <div id="main-content">
+    <h1>🥪 Prepararse un Sandwich</h1>
+    <p id="instructions">Seleccioná los pasos en el orden correcto:</p>
+    <div id="step-buttons" class="buttons-container"></div>
+    <h2>📋 Tu secuencia:</h2>
+    <ol id="selected-steps"></ol>
+    <div id="controls">
+      <p id="result-message"></p>
+      <button onclick="verifySequence()">✅ Verificar</button>
+      <button onclick="resetGame()">🔄 Reintentar</button>
+    </div>
+  </div>
+
+<div id="final-page" style="display:none;">
+
+  <br>
+    <button onclick="location.reload()">Volver a jugar</button>
+
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
