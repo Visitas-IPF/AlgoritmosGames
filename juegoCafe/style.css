@@ -22,8 +22,8 @@ body {
 h1 {
   font-family: 'Press Start 2P', cursive;
   font-size: 2rem;
-  color: #1DB954;
-  text-shadow: 3px 3px #000;
+  color: #7b4d2a;
+  text-shadow: 3px 3px #b89b84;
   margin-bottom: 20px;
 }
 
@@ -32,7 +32,7 @@ h2, h3 {
   font-family: 'Press Start 2P', cursive;
   font-size: 1.2rem;
   margin-top: 20px;
-  color: #1DB954;
+  color: #7b4d2a;
 }
 
 /* PÁRRAFOS */
@@ -60,14 +60,13 @@ p {
 }
 
 /* === BOTONES ESTILO ARCADE === */
-/* === BOTONES ESTILO ARCADE (GENÉRICO) === */
 button.step,
 .choice-button,
 #next-level,
 #final-page button,
 #controls button:not(#veri):not(#rein) {
   padding: 15px 25px;
-  background-color: #1DB954;
+  background-color: #7b4d2a;
   border: 4px solid #fff;
   color: #fff;
   font-family: 'Press Start 2P', cursive;
@@ -84,7 +83,7 @@ button.step:hover,
 #controls button:not(#veri):not(#rein):hover {
   transform: translateY(-3px);
   box-shadow: 6px 6px #000;
-  background-color: #18a745;
+  background-color: #a87a57;
 }
 
 
@@ -104,10 +103,9 @@ button.step:hover,
   padding: 8px 12px;
   border-radius: 6px;
   margin-bottom: 6px;
-  box-shadow: 2px 2px #1DB954;
+  box-shadow: 2px 2px #a87a57;
 }
 
-/* === MENSAJES DE ERROR Y RESULTADO ESTILO ARCADE === */
 /* === MENSAJES DE ERROR Y RESULTADO ESTILO ARCADE === */
 #result-message {
   display: inline-block;
@@ -130,7 +128,7 @@ button.step:hover,
   text-shadow: 2px 2px #000;
 }
 
-/* Texto verde Spotify para correcto con reflejo animado */
+/* Texto verde para correcto con reflejo animado */
 #result-message.correct {
   color: #1DB954;
   text-shadow: 2px 2px #000;
@@ -170,18 +168,13 @@ a.btn-back {
   left: 20px;
   font-size: 0.8rem;
   padding: 8px 16px;
-  background-color: #1DB954;
+  background-color: #a87a57;
   color: #000;
   text-decoration: none;
   border: 3px solid #fff;
   font-family: 'Press Start 2P', cursive;
   z-index: 1000;
   box-shadow: 3px 3px #000;
-}
-
-a.btn-back:hover {
-  background-color: #18a745;
-  transform: scale(1.05);
 }
 
 /* === CONFETTI === */
@@ -314,18 +307,6 @@ a.btn-back:hover {
   inset: 0;
   background: transparent; /* el fondo lo maneja .victory-screen */
   z-index: 10000;
-}
-/* === BOTÓN VERIFICAR (verde) === */
-#veri {
-  background-color: #1DB954; /* verde */
-  border: 4px solid #fff;
-  color: #fff;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 0.9rem;
-  padding: 15px 25px;
-  cursor: pointer;
-  box-shadow: 4px 4px #000;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 #veri:hover {
