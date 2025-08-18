@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Juego de Algoritmos - Colegio</title>
+  <title>Juego de Algoritmos - Lavarse las Manos</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="logo-ipf.png" type="image/png">
 </head>
@@ -10,14 +10,15 @@
   <a href="../index.html" class="btn-back">← Volver</a>
 
   <div id="main-content">
-    <h1>¿Cómo te preparas para ir al colegio?</h1>
+    <h1>🧠 ¿Como te lavas tus manos?</h1>
     <p id="instructions">Seleccioná los pasos en el orden correcto:</p>
-    <div id="step-buttons" class="buttons-container"></div><br> 
-    <h2>Orden:</h2>
+    <div id="step-buttons" class="buttons-container"></div>
+    <h2>📋 Tu secuencia:</h2>
     <ol id="selected-steps"></ol>
     <div id="controls">
       <p id="result-message"></p>
-      <button onclick="resetGame()" id="rein">🔄 Reintentar</button>
+      <button onclick="verifySequence()">✅ Verificar</button>
+      <button onclick="resetGame()">🔄 Reintentar</button>
     </div>
   </div>
 
