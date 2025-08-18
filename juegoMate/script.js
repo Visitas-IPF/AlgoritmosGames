@@ -2,12 +2,12 @@ let currentSteps = [];
 let correctSequence = [
 "Hervir el agua.",
 " Colocar el agua caliente en el termo.",
-" Colocar boldo en el termo.",
-" Cerrar el termo.",
-" Preparar la yerba en el mate.",
+"Colocar boldo en el termo.",
+"Cerrar el termo.",
+"Preparar la yerba en el mate.",
 "Colocar la bombilla.",
 "colocar yuyito en el mate.",
--"Cebar y disfrutarlo.",
+"Cebar y disfrutarlo.",
 ];
 
 function shuffle(array) {
