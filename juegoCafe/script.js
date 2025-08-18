@@ -41,19 +41,19 @@ function verifySequence() {
   const msg = document.getElementById("result-message");
 
   if (currentSteps.length !== correctSequence.length) {
-    msg.textContent = "🚨 Faltan pasos.";
+    msg.textContent = "Ups, te faltan pasos.";
     msg.className = "error";
     return;
   }
 
   const correct = currentSteps.every((s, i) => s === correctSequence[i]);
   if (correct) {
-    msg.textContent = "✅ ¡Correcto!";
+    msg.textContent = "¡Correcto!";
     msg.className = "correct";
     launchConfetti();
     showFinalPage();
   } else {
-    msg.textContent = "❌ Orden incorrecto.";
+    msg.textContent = "El orden es el incorrecto.";
     msg.className = "error";
     resetGame();
   }
