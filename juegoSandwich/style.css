@@ -280,33 +280,33 @@ a.btn-back:hover {
 /* === NUBES ANIMADAS === */
 .cloud {
   position: absolute;
-  width: 120px;
-  height: 60px;
-  background: white;
-  border-radius: 50%;
-  box-shadow: 40px 0 white, 20px -20px white, 60px -10px white;
-  opacity: 0.8;
+  width: 300px;   /* 👈 más anchas */
+  height: 180px;  /* 👈 más altas */
+  background: url("nubeOpcion.png") no-repeat center/contain;
+  opacity: 0.7;   /* 👈 un poquito más transparente, más suave */
+  filter: blur(1px); /* 👈 efecto suavecito */
+  z-index: -1;    /* 👈 detrás del contenido */
 }
 
 .cloud1 {
-  top: 20%;
-  left: -150px;
-  animation: moveClouds 25s linear infinite;
+  top: 15%;
+  left: -250px;
+  animation: moveClouds 30s linear infinite;
 }
 .cloud2 {
-  top: 50%;
-  left: -200px;
-  animation: moveClouds 30s linear infinite;
+  top: 45%;
+  left: -300px;
+  animation: moveClouds 40s linear infinite;
 }
 .cloud3 {
   top: 70%;
-  left: -100px;
-  animation: moveClouds 35s linear infinite;
+  left: -200px;
+  animation: moveClouds 50s linear infinite;
 }
 
 @keyframes moveClouds {
   from { transform: translateX(0); }
-  to { transform: translateX(120vw); }
+  to { transform: translateX(140vw); } /* 👈 recorren más ancho */
 }
 
 #final-page {
@@ -350,5 +350,145 @@ a.btn-back:hover {
   transform: scale(1.05);
   box-shadow: 6px 6px #000;
 }
+
+/* ========================= */
+/* 📱 RESPONSIVE ADAPTACIÓN */
+/* ========================= */
+
+/* Tablets medianas */
+@media (max-width: 1024px) {
+  body {
+    font-size: 1rem;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .buttons-container,
+  #step-buttons {
+    grid-auto-flow: row;   /* 🔹 que se apilen en vertical */
+    grid-template-columns: 1fr 1fr; /* 2 columnas en tablets */
+    gap: 20px;
+  }
+
+  button.step {
+    font-size: 0.8rem;
+    padding: 12px 18px;
+  }
+}
+
+/* Celulares grandes */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  h2 {
+    font-size: 0.9rem;
+  }
+
+  .buttons-container,
+  #step-buttons {
+    grid-template-columns: 1fr; /* 🔹 botones en una sola columna */
+    gap: 15px;
+  }
+
+  button.step {
+    font-size: 0.75rem;
+    padding: 10px 15px;
+    width: 100%; /* 🔹 que ocupen todo el ancho */
+  }
+
+  #selected-steps {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+
+  #rein {
+    font-size: 0.8rem;
+    padding: 12px 18px;
+  }
+
+  .victory-text {
+    font-size: 2rem;
+  }
+
+  .trophy {
+    width: 90px;
+    height: 90px;
+  }
+
+  .replay-btn {
+    font-size: 0.8rem;
+    padding: 10px 16px;
+  }
+}
+
+/* Celulares muy chicos (tipo 360px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.85rem;
+  }
+
+  h1 {
+    font-size: 1.1rem;
+  }
+
+  h2 {
+    font-size: 0.8rem;
+  }
+
+  .buttons-container,
+  #step-buttons {
+    gap: 12px;
+  }
+
+  button.step {
+    font-size: 0.7rem;
+    padding: 8px 12px;
+  }
+
+  #rein {
+    font-size: 0.75rem;
+    padding: 10px 14px;
+  }
+
+  .victory-text {
+    font-size: 1.5rem;
+  }
+
+  .trophy {
+    width: 70px;
+    height: 70px;
+  }
+
+  .replay-btn {
+    font-size: 0.7rem;
+    padding: 8px 12px;
+  }
+}
+.games-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* 🔹 centrarlas */
+  gap: 40px;   /* 🔹 más separación entre tarjetas */
+  margin-top: 40px;
+  padding: 10px;
+}
+
+
+
+
 
 

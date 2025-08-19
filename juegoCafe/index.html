@@ -5,13 +5,32 @@
   <title>Algoritmo de café.</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="logo-ipf.png" type="image/png">
+
+  <style>
+    body {
+      position: relative; 
+      overflow: hidden;   
+      }
+    .cloud {
+      z-index: 0; /* las nubes quedan atrás */
+    }
+    #main-content {
+      position: relative;
+      z-index: 1; /* el contenido queda encima */
+    }
+  </style>
 </head>
 <body>
-  <a href="../index.html" class="btn-back">← Volver</a>
+  <a href="../index.html" class="btn-back">← Volver</a><br><br>
+
+  <!-- 🔹 Nubes animadas -->
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
+  <div class="cloud cloud3"></div>
 
   <div id="main-content">
     <h1>Preparamos un café ☕</h1>
-    <div id="step-buttons" class="buttons-container"></div>
+    <div id="step-buttons" class="buttons-container"></div><br>
     <h2>Orden seleccionado::</h2>
     <ol id="selected-steps"></ol>
     <div id="controls">

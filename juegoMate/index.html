@@ -5,9 +5,28 @@
   <title>Preparar un mate</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="logo-ipf.png" type="image/png">
+   <style>
+    body {
+      position: relative; /* importante para que las nubes se ubiquen dentro */
+      overflow: hidden;   /* evita scroll por las animaciones */
+    }
+    .cloud {
+      z-index: 0; /* las nubes quedan atrás */
+    }
+    #main-content {
+      position: relative;
+      z-index: 1; /* el contenido queda encima */
+    }
+  </style>
 </head>
 <body>
-  <a href="../index.html" class="btn-back">← Volver</a>
+  <a href="../index.html" class="btn-back">← Volver</a><br><br>
+
+   <!-- 🔹 Nubes animadas -->
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
+  <div class="cloud cloud3"></div>
+
 
   <div id="main-content">
     <h1> Prepararse un mate</h1>
