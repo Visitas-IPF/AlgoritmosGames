@@ -11,14 +11,17 @@
 
   <div id="main-content">
     <h1>Lavarse las manos</h1>
-    <div id="step-buttons" class="buttons-container"></div>
+    <div id="step-buttons" class="buttons-container"></div><br>
     <h2>Orden seleccionado:</h2>
     <ol id="selected-steps"></ol>
     <div id="controls">
       <p id="result-message"></p>
-      <button onclick="resetGame()">Reintentar</button>
+      <button onclick="resetGame()" id="rein">Reintentar</button>
     </div>
   </div>
+
+    <!-- 🔹 Contenedor para la pantalla final -->
+  <div id="final-page" style="display:none;"></div>
 
   <script src="script.js"></script>
 </body>

@@ -3,9 +3,11 @@ let correctSequence = [
 "Pulsar botón de encendido.",
 "Esperar a que prenda",
 "Escribimos la contraseña.",
-"Entramos al programa necesario.",
-"Abrimos el programa necesario.",
-"Finalizamos la tarea que deseabamos hacer",
+"Hacer doble click en el programa necesario.",
+"Esperar a que cargue el programa.",
+"Comenzar a trabajar.",
+"Al finalizar la tarea cerrar el programa.",
+"Apagar el equipo.",
 ];
 
 function shuffle(array) {

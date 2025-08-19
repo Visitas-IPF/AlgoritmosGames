@@ -22,7 +22,7 @@ body {
 h1 {
   font-family: 'Press Start 2P', cursive;
   font-size: 2rem;
-  color: #1DB954;
+  color: #f3d215;
   text-shadow: 3px 3px #000;
   margin-bottom: 20px;
 }
@@ -32,7 +32,7 @@ h2, h3 {
   font-family: 'Press Start 2P', cursive;
   font-size: 1.2rem;
   margin-top: 20px;
-  color: #1DB954;
+  color: #f3d215;
 }
 
 /* PÁRRAFOS */
@@ -67,7 +67,7 @@ button.step,
 #final-page button,
 #controls button:not(#veri):not(#rein) {
   padding: 15px 25px;
-  background-color: #1DB954;
+  background-color: #f3d215;
   border: 4px solid #fff;
   color: #fff;
   font-family: 'Press Start 2P', cursive;
@@ -84,7 +84,7 @@ button.step:hover,
 #controls button:not(#veri):not(#rein):hover {
   transform: translateY(-3px);
   box-shadow: 6px 6px #000;
-  background-color: #18a745;
+  background-color: #baa216;
 }
 
 
@@ -104,7 +104,7 @@ button.step:hover,
   padding: 8px 12px;
   border-radius: 6px;
   margin-bottom: 6px;
-  box-shadow: 2px 2px #1DB954;
+  box-shadow: 2px 2px #f3d215;
 }
 
 /* === MENSAJES DE ERROR Y RESULTADO ESTILO ARCADE === */
@@ -170,7 +170,7 @@ a.btn-back {
   left: 20px;
   font-size: 0.8rem;
   padding: 8px 16px;
-  background-color: #1DB954;
+  background-color: #f3d215;
   color: #000;
   text-decoration: none;
   border: 3px solid #fff;
@@ -180,7 +180,7 @@ a.btn-back {
 }
 
 a.btn-back:hover {
-  background-color: #18a745;
+  background-color: #b39c16;
   transform: scale(1.05);
 }
 
@@ -223,7 +223,7 @@ a.btn-back:hover {
   position: relative;
   width: 100%;
   height: 100%; /* Verde flúor */
-  box-shadow: 0 0 30px #1DB954;
+  box-shadow: 0 0 30px #f3d215;
   display: flex;
   flex-direction: column;
   align-items: center;

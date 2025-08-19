@@ -30,59 +30,62 @@ h1 {
   margin: 0 auto;
 }
 
-/* Contenedor de juegos: EXACTO 3 x 2 */
+/* Contenedor de juegos */
 .games-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);   /* 3 columnas fijas */
-  grid-template-rows: repeat(2, auto);     /* 2 filas */
-  gap: 30px;
+  grid-template-rows: repeat(2, auto);
+  gap: 40px;   /* 🔹 más separación entre tarjetas */
   margin-top: 40px;
+  padding: 10px;
 }
 
-/* Tarjeta */
+/* Tarjeta más chica */
 .games-container a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
+  padding: 10px;              /* 🔹 menos padding */
   background-color: var(--card-bg, #222);
-  box-shadow: 0 0 0 4px #000, 0 0 0 8px var(--card-bg, #222);
-  image-rendering: pixelated;
-  text-decoration: none;
-  transition: transform 0.2s ease;
+  box-shadow: 0 0 0 3px #000, 0 0 0 6px var(--card-bg, #222);
   border-radius: 8px;
   min-height: 100%;
+  max-width: 250px;           /* 🔹 ancho máximo más chico */
+  margin: auto;               /* 🔹 centrarlas */
+  transition: transform 0.2s ease;
 }
 
 .games-container a:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
-/* Mantener proporción de imagen (4:3) y que todas queden iguales */
+/* Imagen más chica y que nunca se corte */
 .games-container img {
-  width: 100%;
+  width: 90%;                 /* 🔹 más chica que la tarjeta */
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;         /* 🔹 asegura que no se corte */
   image-rendering: pixelated;
   display: block;
+  border-radius: 6px;          /* 🔹 se ve más prolijo */
 }
 
+/* Texto más chico */
 .games-container span {
   font-family: 'Press Start 2P', cursive;
-  font-size: 0.8rem;
+  font-size: 0.7rem;           /* 🔹 más pequeño */
   color: white;
-  margin: 10px 0;
+  margin: 8px 0;
   text-align: center;
 }
 
+/* Botón más compacto */
 .games-container .play-btn {
-  padding: 8px 12px;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 0.7rem;
+  padding: 6px 10px;
+  font-size: 0.65rem;
   background-color: var(--card-bg, #222);
   color: white;
-  border: 3px solid white;
-  box-shadow: 3px 3px black;
+  border: 2px solid white;
+  box-shadow: 2px 2px black;
   cursor: pointer;
 }
 
@@ -116,7 +119,7 @@ h1 {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 96px; /* <-- antes 48px */
+  height: 200px; /* <-- antes 48px */
   background-image: url('img/pasto-Photoroom.png');
   background-repeat: repeat-x;
   background-size: contain; /* mantiene el “tile” pixelado */
