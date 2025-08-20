@@ -1,0 +1,9 @@
+[24.10.2024 16:05:41] [INFO] External file loaded with 48 fuzzers
+[24.10.2024 16:05:41] [INFO] Adding 5 Zero Fuzzers to the fuzzing Database
+[24.10.2024 16:05:41] [INFO] Database loaded with 53 fuzzers
+[24.10.2024 16:15:48] [INFO] External file loaded with 48 fuzzers
+[24.10.2024 16:15:48] [INFO] Adding 5 Zero Fuzzers to the fuzzing Database
+[24.10.2024 16:15:48] [INFO] Database loaded with 53 fuzzers
+[24.10.2024 16:16:07] [INFO] External file loaded with 48 fuzzers
+[24.10.2024 16:16:07] [INFO] Adding 5 Zero Fuzzers to the fuzzing Database
+[24.10.2024 16:16:07] [INFO] Database loaded with 53 fuzzers
