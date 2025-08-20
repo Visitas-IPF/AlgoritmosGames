@@ -31,6 +31,11 @@ function selectStep(step) {
   const li = document.createElement("li");
   li.textContent = step;
   document.getElementById("selected-steps").appendChild(li);
+
+   // Si el jugador ya eligió todos los pasos, verificar automáticamente
+  if (currentSteps.length === correctSequence.length) {
+    verifySequence();
+  }
 }
 
 function verifySequence() {
